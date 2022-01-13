@@ -1,31 +1,27 @@
 <template>
-  <div>
+  <div class="mx-3" style="min-width:540px">
     <!-- Hearder Nav -->
-    <HeaderNav/>
+    <HeaderNav class="d-none d-lg-block"/>
 
     <!-- Breadcrumb start Here -->
     <b-container>
       <div class="my-2 d">
-        <svg xmlns="http://www.w3.org/2000/svg" style="width:18px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" style="width:14px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
+        <b-icon icon="house-fill" font-scale="1.25"></b-icon>
+        <b-icon icon="chevron-right" font-scale="1"></b-icon>
         <span class="h6" style="font-size:15px;">SHOP</span>
       </div>
     </b-container>
     <!-- Breadcrumb end Here -->
 
     <!-- Sidebar start here -->
-    <b-container class="bv-example-row">
+    <b-container>
       <b-row>
         <!-- Left side -->
-        <b-col class="border">
+        <b-col sm="12" lg="3" class="mt-3 border d-none d-lg-block">
           <categoriesSidebar/>
         </b-col>
         <!-- Right Side -->
-        <b-col cols='9' class="">
+        <b-col class="" sm="12" lg="9">
           <!-- Product Top section start here -->
           <div>
             <b-list-group style="font-size:16px; font-weight:bold;">
@@ -41,23 +37,18 @@
                 </div>
 
                 <div class="d-flex align-items-center">
-                  <h6>Show:</h6>
-                  <b-dropdown size="sm" text="5" variant="outline-dark" class="m-2">
-                    <b-dropdown-item href="#">1</b-dropdown-item>
-                    <b-dropdown-item href="#">2</b-dropdown-item>
-                    <b-dropdown-item href="#">3</b-dropdown-item>
-                    <b-dropdown-item href="#">4</b-dropdown-item>
-                    <b-dropdown-item href="#">5</b-dropdown-item>
-                  </b-dropdown>
-                  <div @click="showGrid">
-                    <svg xmlns="http://www.w3.org/2000/svg" style="width:28px;" :style="{color:gridView ? '#007bff' : ''}"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-                    </svg>
+                  <h6 class="mx-1">Show:</h6>
+                  <b-form-select
+                    id="inline-form-custom-select-pref"
+                    class="mr-sm-2 mb-sm-0"
+                    :options="[{ text: '1', value: null }, '1', '2', '3' ,'4' ,'5' ,'6', '7', '8','9','10']"
+                    :value="10"
+                  ></b-form-select>
+                  <div class="mx-1" @click="showGrid">
+                    <b-icon icon="grid" font-scale="1.5" :style="{color:gridView ? '#007bff' : ''}"></b-icon>
                   </div>
-                  <div @click="showList">
-                    <svg xmlns="http://www.w3.org/2000/svg" style="width:28px;" :style="{color:listView ? '#007bff' : ''}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-                    </svg>
+                  <div class="mx-1" @click="showList">
+                    <b-icon icon="list-ul" font-scale="1.75" :style="{color:listView ? '#007bff' : ''}"></b-icon>
                   </div>
                 </div>
 
@@ -68,13 +59,13 @@
           <!-- Product Top section end here -->
 
           <!-- product cart section start here-->
-          <div class="ml-4">
+          <div class="ml-3">
 
             <!-- grid view start here -->
-            <b-row v-if="gridView" align-v="center">
-              <b-col v-for="index in 6" :key="index" cols="4">
-                <NuxtLink to="/product_details">
-                  <productGridView/>
+            <b-row v-if="gridView">
+              <b-col v-for="index in 6" :key="index" class="p-1" cols="6" md="4">
+                <NuxtLink style="text-decoration: none;" to="/product_details">
+                  <productGridCard/>
                 </NuxtLink>
               </b-col>
             </b-row>
@@ -82,9 +73,9 @@
 
             <!-- List view start here -->
             <b-row v-if="listView">
-                <div v-for="index in 2" :key="index">
-                  <productListView/>
-                </div>
+                <b-row v-for="index in 2" :key="index" cols="12">
+                  <productListCard/>
+                </b-row>
             </b-row>
             <!-- List view end here -->
 
@@ -95,14 +86,13 @@
           <div>
             <b-list-group-item class="pl-1 pr-1 d-flex justify-content-between align-items-center" style="border:none">
               <div class="d-flex align-items-center">
-                <h6>Show:</h6>
-                <b-dropdown size="sm" text="5" variant="outline-dark" class="m-2">
-                  <b-dropdown-item href="#">1</b-dropdown-item>
-                  <b-dropdown-item href="#">2</b-dropdown-item>
-                  <b-dropdown-item href="#">3</b-dropdown-item>
-                  <b-dropdown-item href="#">4</b-dropdown-item>
-                  <b-dropdown-item href="#">5</b-dropdown-item>
-                </b-dropdown>
+                <h6 class="mx-1">Show:</h6>
+                <b-form-select
+                    id="inline-form-custom-select-pref"
+                    class="mr-sm-2 mb-sm-0"
+                    :options="[{ text: '1', value: null }, '1', '2', '3' ,'4' ,'5' ,'6', '7', '8','9','10']"
+                    :value="10"
+                  ></b-form-select>
               </div>
 
               <div class="">

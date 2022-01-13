@@ -1,5 +1,15 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  build: {
+    extend (config, ctx) {
+      const proxy = {
+        proxy: {
+          '/api': 'http://127.0.0.1:5000'
+        }
+      }
+      config.devServer = Object.create({}, config.devServer, proxy)
+    },
+  },
   head: {
     title: 'PORTO',
     htmlAttrs: {
@@ -18,7 +28,11 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    {
+      "src":'plugins/bootstrap-vue-icons.js'
+    }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -44,5 +58,5 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  // build: {},
 }

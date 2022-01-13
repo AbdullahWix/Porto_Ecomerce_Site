@@ -1,6 +1,6 @@
 <!-- Please remove this file from your project -->
 <template>
-  <div>
+  <div style="min-width:540px">
     <!-- Top Nav start Here -->
     <div class="bg-dark" style="color:white; border-radius: none;">
       <offerNav/>
@@ -14,28 +14,27 @@
     <!-- Second Nav end here -->
 
     <!-- Main Navbar start here-->
-    <div class="mt-4">
-      <div class="mx-5">
-        <b-navbar class="pb-2 pt-0" toggleable="lg" type="dark" variant="none">
+    <div class="position-relative sticky-top">
+      <div>
+        <b-navbar class="pb-2 pt-0 d-flex justify-content-between" type="dark" variant="none">
             <b-navbar-brand href="#" class="text-dark">
-              <span style="font-size:35px">
-                <b-button v-b-toggle.sidebar-variant variant="none">
-                  <svg xmlns="http://www.w3.org/2000/svg" style="width:40px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-                  </svg>
+              <span sm="text-primary">
+                <b-button v-b-toggle.sidebar-variant class="d-lg-none" variant="none">
+                  <b-icon icon="menu-button-wide" size="lg" font-scale="2" animation="cylon-vertical"></b-icon>
                 </b-button>
-                PORTO</span>
+                <span class="h3">PORTO</span>
+              </span>
             </b-navbar-brand>
 
-          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+          <!-- <b-navbar-toggle target="nav-collapse"></b-navbar-toggle> -->
 
-          <b-collapse id="nav-collapse" is-nav>
+
             <!-- left side -->
-            <b-navbar-nav>
-              <b-form class="navbar-search form-inline mr-sm-3 ml-5">
+            <b-navbar-nav class="d-none d-lg-block w-50">
+              <b-form class="w-100 mr-sm-3 ml-5">
                 <b-form-group class="mb-0">
                   <b-input-group class="input-group-alternative input-group-merge">
-                    <b-form-input variant="primary" placeholder="Search..." type="text" style="height:40px;color:#808080; width:350px; opacity:.75;border-radius: 25px 0px 0px 25px;"></b-form-input>
+                    <b-form-input variant="primary" class="width-full" placeholder="Search..." type="text" style="height:40px;color:#808080; opacity:.75;border-radius: 25px 0px 0px 25px;"></b-form-input>
                     <div>
                       <b-dropdown text="All Categories" variant="none" class="border">
                         <b-dropdown-item>First Action</b-dropdown-item>
@@ -48,10 +47,8 @@
                     </div>
 
                     <div class="input-group-append" style="">
-                      <span class="input-group-text" style="background-color:white; border-left:none; opacity:.75;border-radius: 0px 25px 25px 0px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" style="height:20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
+                      <span class="input-group-text" style="background-color:white; opacity:.75;border-radius: 0px 25px 25px 0px;">
+                        <b-icon icon="search"></b-icon>
                       </span>
                     </div>
                   </b-input-group>
@@ -60,13 +57,55 @@
             </b-navbar-nav>
 
 
+            <!-- Toogle Search bar -->
+            <div v-if="toggleSearch" class="position-absolute bottom-search">
+              <b-navbar-nav class="w-50">
+                <b-form class="w-100 mr-sm-3 ml-5">
+                  <b-form-group class="mb-0">
+                    <b-input-group class="input-group-alternative input-group-merge" style="border-radius: 50px; border: solid 3px;">
+                      <b-form-input variant="primary" class="width-full border-0" placeholder="Search..." type="text" style="height:40px;color:#808080; opacity:.75;border-radius: 25px 0px 0px 25px;"></b-form-input>
+                      <div hidden>
+                        <b-dropdown text="All Categories" variant="none" class="border">
+                          <b-dropdown-item>First Action</b-dropdown-item>
+                          <b-dropdown-item>Second Action</b-dropdown-item>
+                          <b-dropdown-item>Third Action</b-dropdown-item>
+                          <b-dropdown-item>First Action</b-dropdown-item>
+                          <b-dropdown-item>Second Action</b-dropdown-item>
+                          <b-dropdown-item>Third Action</b-dropdown-item>
+                        </b-dropdown>
+                      </div>
+
+                      <div class="input-group-append" style="">
+                        <span class="input-group-text border-0" style="background-color:white; opacity:.75;border-radius: 0px 25px 25px 0px;">
+                          <b-icon icon="search"></b-icon>
+                        </span>
+                      </div>
+                    </b-input-group>
+                  </b-form-group>
+                </b-form>
+              </b-navbar-nav>
+            </div>
+
+
+
+
+        <b-navbar>
             <!-- Right aligned nav items -->
-            <b-navbar-nav class="ml-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" style="width:35px; font-weight: normal;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <b-navbar-nav class="ml-auto d-block d-lg-none">
+                <b-icon icon="search" class="h2 pt-2 mr-2" @click="toggleSearchIcon"></b-icon>
+            </b-navbar-nav>
+
+            <b-navbar-nav class="mr-2 d-none d-lg-block">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" style="width:35px; font-weight: normal;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <div class="card-title">
-                  <p class="pt-4" style="font-size:10px;">CALL US NOW <br><span style="font-size:13px; font-weight:bold;">+2873627537266</span></p>
+                </svg> -->
+                <div class="d-flex">
+                  <div style="margin-top: 25px; margin-right: 5px;">
+                    <b-icon icon="telephone" font-scale="2"></b-icon>
+                  </div>
+                  <div class="card-title">
+                    <p class="pt-4" style="font-size:10px;">CALL US NOW <br><span style="font-size:13px; font-weight:bold;">+2873627537266</span></p>
+                  </div>
                 </div>
             </b-navbar-nav>
 
@@ -91,8 +130,7 @@
               </b-avatar>
 
             </b-navbar-nav>
-
-          </b-collapse>
+        </b-navbar>
         </b-navbar>
       </div>
 
@@ -125,6 +163,26 @@ import offerNav from './nav/offerNav.vue';
 import menuNav from './nav/menuNav.vue';
 export default {
   name: 'NuxtTutorial',
-  components:{offerNav,menuNav}
+  components:{offerNav,menuNav},
+  data(){
+    return{
+      toggleSearch:false
+    }
+  },
+  methods:{
+    toggleSearchIcon(){
+      this.toggleSearch = !this.toggleSearch;
+    }
+  }
 }
 </script>
+
+<style scoped>
+.bottom-search{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50px;
+}
+</style>

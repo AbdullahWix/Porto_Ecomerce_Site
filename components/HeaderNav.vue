@@ -1,11 +1,11 @@
 <template>
   <div>
     <!-- Header Nav Start here -->
-    <b-navbar toggleable="lg" type="dark" variant="light">
+    <b-navbar type="dark" variant="light">
 
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <!-- <b-navbar-toggle target="nav-collapse"></b-navbar-toggle> -->
 
-      <b-collapse id="nav-collapse" is-nav>
+      <!-- <b-collapse id="nav-collapse" is-nav> -->
         <b-container>
           <!-- Left items -->
           <b-navbar-nav class="py-2" style="font-size:13px; letter-spacing:1px; gap:15px; font-weight:700">
@@ -25,7 +25,7 @@
           </b-navbar-nav>
 
         </b-container>
-      </b-collapse>
+      <!-- </b-collapse> -->
     </b-navbar>
     <!-- Header Nav end here -->
   </div>

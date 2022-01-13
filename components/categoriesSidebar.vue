@@ -3,14 +3,15 @@
       <div>
         <b-list-group style="font-size:20px; font-weight:bold;">
 
+          <b-list-group style="font-size:16px; font-weight:bold;">
+
           <b-list-group-item class="pl-1 pr-1 d-flex justify-content-between align-items-center" style="border:none">
             CATEGORIES
             <b-badge variant="none">
-              <svg xmlns="http://www.w3.org/2000/svg" style="width:20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
-              </svg>
+              <b-icon icon="dash" font-scale="1.50"></b-icon>
             </b-badge>
           </b-list-group-item>
+        </b-list-group>
 
         </b-list-group>
 
@@ -19,45 +20,35 @@
           <b-list-group-item class="p-1 d-flex justify-content-between align-items-center" style="border:none">
             Cloth(5)
             <b-badge variant="none">
-              <svg xmlns="http://www.w3.org/2000/svg" style="width:15px"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+              <b-icon icon="chevron-down" font-scale="1.50"></b-icon>
             </b-badge>
           </b-list-group-item>
 
           <b-list-group-item class="p-1 d-flex justify-content-between align-items-center" style="border:none">
             Com(7)
             <b-badge variant="none">
-              <svg xmlns="http://www.w3.org/2000/svg" style="width:15px"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+              <b-icon icon="chevron-down" font-scale="1.50"></b-icon>
             </b-badge>
           </b-list-group-item>
 
           <b-list-group-item class="p-1 d-flex justify-content-between align-items-center" style="border:none">
             Dress(5)
             <b-badge variant="none">
-              <svg xmlns="http://www.w3.org/2000/svg" style="width:15px"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+              <b-icon icon="chevron-down" font-scale="1.50"></b-icon>
             </b-badge>
           </b-list-group-item>
 
           <b-list-group-item class="p-1 d-flex justify-content-between align-items-center" style="border:none">
             Fashion(4)
             <b-badge variant="none">
-              <svg xmlns="http://www.w3.org/2000/svg" style="width:15px"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+              <b-icon icon="chevron-down" font-scale="1.50"></b-icon>
             </b-badge>
           </b-list-group-item>
 
           <b-list-group-item class="p-1 d-flex justify-content-between align-items-center" style="border:none">
             Trousers(5)
             <b-badge variant="none">
-              <svg xmlns="http://www.w3.org/2000/svg" style="width:15px"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
+              <b-icon icon="chevron-down" font-scale="1.50"></b-icon>
             </b-badge>
           </b-list-group-item>
 
@@ -78,9 +69,7 @@
           <b-list-group-item class="pl-1 pr-1 d-flex justify-content-between align-items-center" style="border:none">
             PRICE
             <b-badge variant="none">
-              <svg xmlns="http://www.w3.org/2000/svg" style="width:20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
-              </svg>
+              <b-icon icon="dash" font-scale="1.50"></b-icon>
             </b-badge>
           </b-list-group-item>
         </b-list-group>
@@ -103,25 +92,55 @@
 
       <hr>
 
+      <!-- Color -->
       <div>
         <b-list-group style="font-size:16px; font-weight:bold;">
 
           <b-list-group-item class="pl-1 pr-1 d-flex justify-content-between align-items-center" style="border:none">
             COLOR
             <b-badge variant="none">
-              <svg xmlns="http://www.w3.org/2000/svg" style="width:20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
-              </svg>
+              <b-icon icon="dash" font-scale="1.50"></b-icon>
             </b-badge>
           </b-list-group-item>
         </b-list-group>
 
         <div class="d-flex justify-content-between mb-3">
-          <div style="width:50px;height:50px;border:1px; background-color:red;"></div>
-          <div style="width:50px;height:50px;border:1px; background-color:gray;"></div>
-          <div style="width:50px;height:50px;border:1px; background-color:green;"></div>
-          <div style="width:50px;height:50px;border:1px; background-color:blue;"></div>
+          <div style="width:40px;height:40px;border:1px; background-color:red;"></div>
+          <div style="width:40px;height:40px;border:1px; background-color:gray;"></div>
+          <div style="width:40px;height:40px;border:1px; background-color:green;"></div>
+          <div style="width:40px;height:40px;border:1px; background-color:blue;"></div>
+          <div style="width:40px;height:40px;border:1px; background-color:yellow;"></div>
         </div>
+      </div>
+
+      <!-- Size -->
+      <div>
+        <b-list-group style="font-size:16px; font-weight:bold;">
+
+          <b-list-group-item class="pl-1 pr-1 d-flex justify-content-between align-items-center" style="border:none">
+            SIZES
+            <b-badge variant="none">
+              <b-icon icon="dash" font-scale="1.50"></b-icon>
+            </b-badge>
+          </b-list-group-item>
+        </b-list-group>
+
+        <div class="d-flex justify-content-start mb-3" style="gap:7px;">
+          <div style="width:35px;height:31px;border:1px; border:solid 1px;">
+            <p class="text-center font-weight-bold">XL</p>
+          </div>
+          <div style="width:35px;height:31px;border:1px; border:solid 1px;">
+            <p class="text-center font-weight-bold">L</p>
+          </div>
+          <div style="width:35px;height:31px;border:1px; border:solid 1px;">
+            <p class="text-center font-weight-bold">M</p>
+          </div>
+          <div style="width:35px;height:31px;border:1px; border:solid 1px;">
+            <p class="text-center font-weight-bold">S</p>
+          </div>
+        </div>
+
+
 
       </div>
     </div>
