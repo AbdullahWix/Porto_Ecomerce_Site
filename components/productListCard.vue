@@ -2,16 +2,17 @@
   <div>
     <b-card no-body class="overflow-hidden mb-4 p-2" style="border:none;">
       <b-row no-gutters>
-        <b-col cols="5" lg="4">
+        <b-col v-b-hover="handleHover" cols="5" lg="4">
           <!-- <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans"> -->
-          <b-img src="https://m.media-amazon.com/images/I/51tje7mBkkL._AC_SX425_.jpg" fluid-grow alt="Responsive image" style="width:100%; height:200px; object-fit: contain;" class="p-2"></b-img>
+          <b-img v-if="isHovered" src="https://m.media-amazon.com/images/I/51rLKWfhEdL._AC_SX425_.jpg" fluid-grow alt="Responsive image" style="width:100%; height:200px; object-fit: contain;" class="p-2"></b-img>
+          <b-img v-else src="https://m.media-amazon.com/images/I/51tje7mBkkL._AC_SX425_.jpg" fluid-grow alt="Responsive image" style="width:100%; height:200px; object-fit: contain;" class="p-2"></b-img>
         </b-col>
         <b-col>
           <div class="px-4">
             <p class="card-title m-0 font-weight-bold text-dark" style="font-size:14px;">COM,HEADPHONE</p>
             <p class="card-subtitle mt-1" style="color:#666666; font-size:14px; font-weight:600;">Black Ears</p>
             <b-form-rating class="p-0 m-0" size="sm" no-border inline value="4" variant="secondary" style="font-size:12px;"></b-form-rating>
-            
+
             <p class="card-subtitle pt-1" style="color:#666666; font-size:15px;">
               This is a wider card with supporting text as a natural lead-in to additional content.
               This content is a little bit longer.
@@ -135,3 +136,18 @@
     </b-card>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+      return {
+        isHovered: false
+      }
+    },
+    methods: {
+      handleHover(hovered) {
+        this.isHovered = hovered
+      }
+  }
+}
+</script>

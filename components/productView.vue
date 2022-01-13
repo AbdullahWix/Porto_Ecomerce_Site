@@ -118,8 +118,8 @@ export default {
   name: 'SidebarMenu',
   data(){
     return{
-      gridView:false,
-      listView:true,
+      gridView:true,
+      listView:false,
       rows: 100,
       currentPage: 3
     }

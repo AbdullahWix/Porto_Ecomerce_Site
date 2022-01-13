@@ -6,7 +6,7 @@
     <b-container class="bv-example-row">
       <b-row>
         <!-- Left Side -->
-        <b-col cols="3">
+        <b-col cols="12" sm="6" md="4" lg="3">
           <div>
             <h6 class="font-weight-bold">CONTACT INFO</h6>
             <div class="mt-3">
@@ -29,10 +29,10 @@
         </b-col>
 
         <!-- Right Side -->
-        <b-col cols="9">
+        <b-col cols="12" sm="6" md="8" lg="9">
           <div>
             <b-row>
-              <b-col>
+              <b-col cols="12" lg="6" class="my-2">
                 <div>
                   <h6 class="font-weight-bold">SUBSCRIBE NEWSLETTER</h6>
                   <div class="mt-2">
@@ -42,10 +42,10 @@
                 </div>
               </b-col>
 
-              <b-col>
+              <b-col cols="12" lg="6" class="my-2">
                 <div>
                   <b-navbar-nav>
-                    <b-form class="navbar-search form-inline mr-sm-3 ml-5">
+                    <b-form class="navbar-search form-inline mr-sm-3 ml-lg-5">
                       <b-form-group class="mb-0">
                         <b-input-group class="input-group-alternative input-group-merge">
                           <b-form-input variant="primary" placeholder="Search..." type="text" style="height:40px;color:#808080; opacity:.75;border-radius: 25px 0px 0px 25px;"></b-form-input>
@@ -72,7 +72,7 @@
 
           <div>
             <b-row>
-              <b-col>
+              <b-col cols="12" md="6" lg="3">
                 <div>
                   <h6 class="font-weight-bold">CUSTOMER SERVICE</h6>
                   <div>
@@ -86,7 +86,8 @@
                   </div>
                 </div>
               </b-col>
-              <b-col>
+
+              <b-col cols="12" md="6" lg="3">
                 <div class="mt-4">
                     <div class="pt-2">
                       <b-link class="font-weight-bold m-0" style="font-size:14px;color:gray" href="#foo">Order History</b-link>
@@ -99,7 +100,8 @@
                     </div>
                   </div>
               </b-col>
-              <b-col>
+
+              <b-col cols="12" md="6" lg="3">
                 <div>
                   <h6 class="font-weight-bold">About Us</h6>
                   <div>
@@ -115,7 +117,8 @@
                   </div>
                 </div>
               </b-col>
-              <b-col>
+
+              <b-col cols="12" md="6" lg="3">
                 <div class="mt-4">
                     <div class="pt-2">
                       <b-link class="font-weight-bold m-0" style="font-size:14px;color:gray">Powerful Admin Panel</b-link>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-5">
+  <div class="container my-5 d-none d-lg-block">
     <div class="text-center">
       <p class="h4 font-weight-bold text-dark">COMPONENT-4</p>
       <hr>
@@ -19,13 +19,13 @@
 
       <div>
         <div class="d-flex justify-content-center align-items-center" style="gap:20px">
-          <div v-for="item in 4" :key="item">
+          <div v-for="item in categories" :key="item">
             <div class="d-flex justify-content-center align-items-center bg-light cardbg">
-              <b-img rounded="circle" src="https://s-media-cache-ak0.pinimg.com/236x/3b/36/ca/3b36ca3afe0fa0fd4984b9eee2e154bb.jpg" style="width:120px; height:120px;" alt="Circle image"></b-img>
+              <b-img :src="item.img" fluid-grow alt="Responsive image" style="width:100%; height:125px; object-fit: contain;" class="p-4"></b-img>
             </div>
             <div class="pt-2">
-              <p class="m-0 text-center font-weight-bold">DRESS</p>
-              <p class="text-center" style="font-size:12px; color:gray; font-weight:500">3 PRODUCTS</p>
+              <p class="m-0 text-center font-weight-bold">{{item.name}}</p>
+              <p class="text-center" style="font-size:12px; color:gray; font-weight:500">{{item.avilable}} PRODUCTS</p>
             </div>
           </div>
         </div>
@@ -39,6 +39,38 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data(){
+    return{
+      categories:[
+        {
+          img:'https://m.media-amazon.com/images/I/61O45C5qASL._AC_SY355_.jpg',
+          name:'Mobile',
+          avilable:4
+        },
+        {
+          img:'https://m.media-amazon.com/images/I/71d5rAq4YaL._AC_UY327_FMwebp_QL65_.jpg',
+          name:'Laptop',
+          avilable:3
+        },
+        {
+          img:'https://m.media-amazon.com/images/I/61TbMV5bQqL._AC_UY327_FMwebp_QL65_.jpg',
+          name:'Mixer',
+          avilable:7
+        },
+        {
+          img:'https://m.media-amazon.com/images/I/915Xj2rO8WL._AC_UY327_FMwebp_QL65_.jpg',
+          name:'Telivition',
+          avilable:10
+        },
+      ]
+    }
+  }
+}
+</script>
+
+
 <style scoped>
   .cardbg{
     width:200px;

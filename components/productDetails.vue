@@ -2,7 +2,7 @@
   <b-container>
     <div class="mt-2">
       <b-row>
-        <b-col>
+        <b-col cols="12" lg="6">
           <!-- <b-card-img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Image" class="rounded-0" style="height:auto; boeder:none"></b-card-img> -->
           <b-img src="https://m.media-amazon.com/images/I/51tje7mBkkL._AC_SX425_.jpg" fluid-grow alt="Responsive image" style="width:100%; height:400px; object-fit: contain;" class="p-4"></b-img>
           <div class="mt-3 d-flex justify-content-between mb-3">
@@ -21,7 +21,8 @@
             </div>
           </div>
         </b-col>
-        <b-col>
+
+        <b-col cols="12" lg="6">
           <div class="px-4">
             <h3 class="card-title">Casual Note Bag</h3>
             <b-form-rating class="p-0 m-0" size="sm" no-border inline value="4" variant="secondary" style="font-size:12px;"></b-form-rating><span>(1 Reviews )</span>

@@ -35,12 +35,12 @@
           </b-button>
 
 
-          <div v-if="isHovered" class="d-flex" style="gap:4px">
-            <div class="bg-secondary px-2 py-1">
+          <div v-if="isHovered" class="d-flex" style="gap:5px">
+            <div class="bg-secondary px-1">
               <b-icon icon="heart" variant="white" style="font-weight:700"></b-icon>
             </div>
 
-            <div v-b-modal.quickview variant="none" class="bg-secondary px-2 py-1">
+            <div v-b-modal.quickview class="bg-secondary px-1" variant="none">
               <b-icon icon="box-arrow-up-right" variant="white" style="font-weight:700"></b-icon>
             </div>
           </div>

@@ -1,12 +1,12 @@
 <template>
-  <div class="container" style="min-width:540px">
+  <div class="container mt-5 d-none d-lg-block" style="min-width:540px">
     <div class="text-center">
       <p class="font-weight-bold text-dark">FEATURED PRODUCTS</p>
       <hr>
     </div>
     <!-- Featured Product Section -->
     <div class="container d-flex justify-content-between align-items-center">
-      <div class="bg-secondary text-white py-3 px-4">
+      <div class="bg-secondary text-white py-3 px-4 mr-3">
         <svg xmlns="http://www.w3.org/2000/svg" style="width:20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
@@ -37,7 +37,7 @@
 
 
 
-      <div class="bg-secondary text-light py-3 px-4 ">
+      <div class="bg-secondary text-light py-3 px-4 ml-3">
         <svg xmlns="http://www.w3.org/2000/svg" style="width:20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
@@ -109,7 +109,12 @@ export default {
 
 <style scoped>
 .scrolling-wrapper{
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 	overflow-x: auto;
+}
+.scrolling-wrapper::-webkit-scrollbar {
+  display: none;
 }
 .carousel-showmanymoveone .carousel-control {
   width: 4%;

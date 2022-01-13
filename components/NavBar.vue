@@ -14,9 +14,9 @@
     <!-- Second Nav end here -->
 
     <!-- Main Navbar start here-->
-    <div class="position-relative sticky-top">
+    <div class="position-relative container">
       <div>
-        <b-navbar class="pb-2 pt-0 d-flex justify-content-between" type="dark" variant="none">
+        <b-navbar class="mt-2 p-0 pb-2 pt-0 d-flex justify-content-between" type="dark" variant="none">
             <b-navbar-brand href="#" class="text-dark">
               <span sm="text-primary">
                 <b-button v-b-toggle.sidebar-variant class="d-lg-none" variant="none">
@@ -110,7 +110,7 @@
             </b-navbar-nav>
 
 
-            <b-navbar-nav class="ml-auto" style="gap:20px">
+            <b-navbar-nav class="ml-auto" style="gap:14px">
               <b-navbar-nav>
                 <svg xmlns="http://www.w3.org/2000/svg" style="width:30px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
